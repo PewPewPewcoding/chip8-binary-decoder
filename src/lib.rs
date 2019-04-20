@@ -10,14 +10,19 @@ pub struct UserInput {
 
 impl UserInput {
     // Handles the arguments supplies by the user
-    pub fn new(args: Vec<String>) -> Result<UserInput, &'static str> {
-        if args.len() < 3 {
-            return Err("Not enough arguments, 2 arguments needed");
-        }
-        Ok(UserInput {
-            input_filename: args[1].clone(),
-            output_filename: args[2].clone(),
-        })
+    pub fn new(mut args: std::env::Args) -> Result<UserInput, &'static str> {
+        args.next();
+
+        let input_filename = match args.next() {
+            Some(d) => d,
+            None => return Err("not enough arguments, 2 arguments needed"),
+        };
+        let output_filename = match args.next() {
+            Some(d) => d,
+            None => return Err("not enough arguments, 2 arguments needed"),
+        };
+
+        Ok(UserInput {input_filename, output_filename,})
     }
 }
 
