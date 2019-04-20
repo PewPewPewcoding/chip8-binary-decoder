@@ -3,4 +3,5 @@ Takes a chip8 game file and outputs another file with the instructions in plain 
 # usage
 it's very basic, just run the program with 2 arguments, the first being the game file you want to convert and the second one being the output file you want the program to write to.
 # installation
-I really don't know other than downloading the files and compiling them with rust on your system. Didn't really make this as a tool to be used, just as a project to get familiar with git and rust.
+I really don't know other than downloading the files and compiling them on your system. Didn't really make this as a tool to be used, just as a project to get familiar with git and rust. If you really want to try it you can download rust [here]
+(https://www.rust-lang.org/), download the code from github and type `cargo run` in the terminal once you're inside the project folder.
